@@ -5,4 +5,7 @@ package project.services.abs;
  *
  */
 public interface IService {
+
+    long getCount();
+
 }

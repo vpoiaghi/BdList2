@@ -41,6 +41,10 @@ public class ServiceGlobalEvents implements IService {
 
     }
 
+    public long getCount() {
+        return getAll().size();
+    }
+
     public List<GlobalEvent> getAll() {
 
         List<GlobalEvent> globalEventsList = new ArrayList<>();
