@@ -1,5 +1,6 @@
 package project.navigation.adapters;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import java.util.List;
 
 import bdlist.bdlist.R;
 import framework.activity.FragmentManagerActivity;
+import framework.tools.DateUtils;
 import project.donnees.extendedBo.Author;
 import project.donnees.extendedBo.Goody;
 import project.donnees.bo.botypes.SqlDate;
@@ -77,8 +79,15 @@ public class GoodiesAdapter extends ArrayAdapter<Goody> {
         final String parutionText;
         if (parutionDate == null) {
             parutionText = "Parution : inconnue";
+            txtParutionDate.setBackgroundColor(Color.TRANSPARENT);
         } else {
             parutionText = "Parution : " + parutionDate.toString();
+
+            if (DateUtils.isAfter(parutionDate.getDate(), DateUtils.getToday())) {
+                txtParutionDate.setBackgroundColor(Color.YELLOW);
+            } else {
+                txtParutionDate.setBackgroundColor(Color.TRANSPARENT);
+            }
         }
         txtParutionDate.setText(parutionText);
 

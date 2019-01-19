@@ -1,5 +1,6 @@
 package project.navigation.adapters;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import bdlist.bdlist.R;
 import framework.activity.FragmentManagerActivity;
+import framework.tools.DateUtils;
 import project.donnees.extendedBo.Edition;
 import project.donnees.bo.botypes.SqlDate;
 import project.navigation.fragments.FragmentEdition;
@@ -85,6 +87,12 @@ public class OtherEditionsAdapter extends ArrayAdapter<Edition> {
             s = "Parution : " + parutionDate.toString();
         }
         txtParutionDate.setText(s);
+
+        if (DateUtils.isAfter(parutionDate.getDate(), DateUtils.getToday())) {
+            txtParutionDate.setBackgroundColor(Color.YELLOW);
+        } else {
+            txtParutionDate.setBackgroundColor(Color.TRANSPARENT);
+        }
 
         final ImageView imgEdition = (ImageView) row.findViewById(R.id.searchresult_edition_img_item);
         ImageUtils.loadEditionFrontCoverImage(imgEdition, edition);
