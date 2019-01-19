@@ -69,6 +69,23 @@ public class ServiceGlobalEvents implements IService {
         return globalEventsList;
     }
 
+    public List<GlobalEvent> getByName(final String filter) {
+
+        List<GlobalEvent> allList = getAll();
+        List<GlobalEvent> filteredList = new ArrayList<>();
+
+        final String lowerCaseFilter = filter.toLowerCase();
+
+        for(GlobalEvent globalEvent : allList) {
+
+            if (globalEvent.getName().toLowerCase().contains(lowerCaseFilter)) {
+                filteredList.add(globalEvent);
+            }
+        }
+
+        return filteredList;
+    }
+
     public void setState(final GlobalEvent globalEvent, final int state) {
 
         switch(globalEvent.getEventType()) {
