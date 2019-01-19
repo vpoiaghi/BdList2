@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    >
+
+    <ImageView
+        android:id="@+id/serie_img_completed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/icn_possession_in"/>
+
+    <TextView
+        android:id="@+id/serie_txt_serie_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/serie_img_completed"
+        android:layout_marginRight="5dp"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Thorgal"/>
+
+    <TextView
+        android:id="@+id/serie_txt_ended_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/serie_txt_serie_name"
+        android:layout_marginTop="20dp"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:text="En cours"/>
+
+    <TextView
+        android:id="@+id/serie_txt_kind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/serie_txt_ended_state"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:text="Genre : Héroïc-Fantasy" />
+
+    <TextView
+        android:id="@+id/serie_txt_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/serie_txt_kind"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:text="Origine : Europe" />
+
+    <TextView
+        android:id="@+id/serie_txt_titles_stat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/serie_txt_serie_name"
+        android:layout_marginTop="20dp"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:text="Titre : 34 / 34"/>
+
+    <TextView
+        android:id="@+id/serie_txt_editions_stat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/serie_txt_titles_stat"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:text="Editions : 35 / 35" />
+
+</RelativeLayout>

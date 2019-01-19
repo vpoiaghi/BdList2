@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainBackPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lyt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/app_header"
+            layout="@layout/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <FrameLayout
+            android:id="@+id/app_mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="12">
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_sliding_menu"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lyt"
+        android:background="@drawable/style_search_rightpart"
+        android:choiceMode="singleChoice"
+        android:layout_gravity="end">
+    </ListView>
+
+</android.support.v4.widget.DrawerLayout>

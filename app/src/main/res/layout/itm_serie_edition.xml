@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/serie_edition_img_cover"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/serie_edition_img_cover"
+        android:layout_toLeftOf="@+id/serie_edition_img_possession"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:id="@+id/serie_edition_txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Titre de l'edition"
+            />
+
+        <TextView
+            android:id="@+id/serie_edition_txt_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Numéro de l'édition"
+            />
+
+        <TextView
+            android:id="@+id/serie_edition_txt_editor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Editeur"
+            />
+
+        <TextView
+            android:id="@+id/serie_edition_txt_parutiondate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Parution" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/serie_edition_img_possession"
+        android:layout_width="32px"
+        android:layout_height="32px"
+        android:layout_alignParentRight="true"
+        />
+
+</RelativeLayout>

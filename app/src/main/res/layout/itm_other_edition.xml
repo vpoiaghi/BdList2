@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/searchresult_edition_img_item"
+        android:layout_width="144px"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:layout_marginRight="5dp"
+        />
+
+    <ImageView
+        android:id="@+id/searchresult_edition_img_possession"
+        android:layout_width="32px"
+        android:layout_height="32px"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/searchresult_edition_img_item"
+        android:layout_toLeftOf="@+id/searchresult_edition_img_possession">
+
+        <TextView
+            android:id="@+id/searchresult_edition_txt_editionname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Titre de l'edition"
+            />
+
+        <TextView
+            android:id="@+id/searchresult_edition_txt_editionnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Numéro de l'édition"
+            />
+
+        <TextView
+            android:id="@+id/searchresult_edition_txt_editor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Editeur"
+            />
+
+        <TextView
+            android:id="@+id/searchresult_edition_txt_parutiondate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Parution"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

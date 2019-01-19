@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/press_lyt_back"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:layout_marginTop="5dp"
+    android:background="@color/white"
+    >
+
+    <RelativeLayout
+        android:id="@+id/press_lyt_imgBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        >
+        <ImageView
+            android:id="@+id/press_img_item"
+            android:layout_width="144px"
+            android:layout_height="200px"
+            android:scaleType="fitStart"
+            android:layout_centerInParent="true"
+            android:background="@color/black"
+            />
+    </RelativeLayout >
+
+    <TextView
+        android:id="@+id/press_txt_seriename"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:text="Série"
+        />
+
+    <TextView
+        android:id="@+id/press_txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="12sp"
+        android:text="Nom"
+        />
+
+    <TextView
+        android:id="@+id/press_txt_editor"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:textSize="12sp"
+        android:text="Editeur"
+        />
+
+</LinearLayout>

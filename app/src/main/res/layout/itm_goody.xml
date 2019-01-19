@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black">
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:layout_marginTop="5dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/searchresult_goody_img_item"
+        android:layout_width="150px"
+        android:layout_height="250px"
+        android:scaleType="fitStart"
+        android:layout_marginRight="5dp"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/searchresult_goody_txt_seriename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Nom de la série"
+             />
+
+        <TextView
+            android:id="@+id/searchresult_goody_txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Titre du para-bd"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="85"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/searchresult_goody_txt_kind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Genre d'objet"
+                    />
+
+                <TextView
+                    android:id="@+id/searchresult_goody_txt_editor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Editeur"
+                    />
+
+                <TextView
+                    android:id="@+id/searchresult_goody_txt_parutiondate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Parution"
+                    />
+
+                <TextView
+                    android:id="@+id/searchresult_goody_txt_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Auteur"
+                    />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="15">
+                <ImageView
+                    android:id="@+id/searchresult_goody_img_possession"
+                    android:layout_width="32px"
+                    android:layout_height="32px"
+                    android:layout_gravity="bottom|right"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</FrameLayout>

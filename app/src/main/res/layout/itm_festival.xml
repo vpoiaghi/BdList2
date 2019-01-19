@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp" >
+
+    <ImageView
+        android:id="@+id/itm_festival_img"
+        android:layout_width="150px"
+        android:layout_height="250px"
+        android:scaleType="fitStart"
+        android:layout_marginRight="5dp"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:id="@+id/itm_festival_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="Nom du festival"/>
+        <TextView
+            android:id="@+id/itm_festival_dates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Dates du festival"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu_lay_back"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/menu_img_header"
+        android:layout_width="match_parent"
+        android:layout_height="220px"
+        android:background="@color/black"
+        android:src="@drawable/img_menu_header2"
+        android:layout_gravity="right" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="30px"
+        android:layout_marginBottom="30px"
+        >
+
+    <LinearLayout
+        android:id="@+id/menu_lay_items"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/menu_lay_item_search"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10px"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/menu_img_search"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/icn_page_search" />
+
+            <TextView
+                android:id="@+id/menu_txt_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/menu_text_size"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5px"
+                android:text="Recherche"
+                 />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/menu_lay_item_coming"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10px"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/menu_img_coming"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/icn_page_comings" />
+
+            <TextView
+                android:id="@+id/menu_txt_coming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/menu_text_size"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5px"
+                android:text="A paraître"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/menu_lay_item_news"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10px"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/menu_img_news"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/icn_page_news" />
+
+            <TextView
+                android:id="@+id/menu_txt_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/menu_text_size"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5px"
+                android:text="Nouveautés à 15 jours"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/menu_lay_item_editors"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10px"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/menu_img_editors"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/icn_page_editors" />
+
+            <TextView
+                android:id="@+id/menu_txt_editors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/menu_text_size"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5px"
+                android:text="Editeurs"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/menu_lay_item_events"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10px"
+            >
+
+            <project.navigation.components.ImageViewEventButton
+                android:id="@+id/menu_img_events"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/icn_page_events"
+                />
+
+            <TextView
+                android:id="@+id/menu_txt_events"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/menu_text_size"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5px"
+                android:text="Evènements / Rappels"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/menu_lay_item_authors"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10px"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/menu_img_authors"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/icn_page_authors" />
+
+            <TextView
+                android:id="@+id/menu_txt_authors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/menu_text_size"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5px"
+                android:text="Auteurs"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_lay_item_press"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10px"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/menu_img_press"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/icn_page_press" />
+
+            <TextView
+                android:id="@+id/menu_txt_press"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/menu_text_size"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5px"
+                android:text="Articles en presse"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_lay_item_festivals"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10px"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/menu_img_festivals"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/icn_page_festival" />
+
+            <TextView
+                android:id="@+id/menu_txt_festivals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/menu_text_size"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5px"
+                android:text="Festivals"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_lay_item_tools"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10px"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/menu_img_tools"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/icn_page_tools" />
+
+            <TextView
+                android:id="@+id/menu_txt_tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/menu_text_size"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5px"
+                android:text="Outils et Paramètres"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

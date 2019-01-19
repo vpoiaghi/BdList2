@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    >
+
+
+    <TextView
+        android:id="@+id/festival_txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Festival d'angoulême 2019"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        >
+
+        <ImageView
+            android:id="@+id/festival_img_editor_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icn_filter"/>
+
+        <TextView
+            android:id="@+id/festival_txt_editor_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:text="Filtre éditeur"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

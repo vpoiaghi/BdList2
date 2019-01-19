@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Bottom navigation bar -->
+    <LinearLayout
+        android:id="@+id/festival_layout_foot"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/festival_lnl_prev"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:gravity="center_vertical|left"
+            android:background="@color/black">
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            android:scaleType="fitXY"
+            android:src="@drawable/bottom_barr"/>
+
+        <LinearLayout
+            android:id="@+id/festival_lnl_next"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:gravity="center_vertical|right"
+            android:background="@color/black">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/festival_layout_right"
+        android:orientation="vertical"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/festival_layout_foot"
+        android:gravity="bottom|right"
+        android:background="@drawable/style_search_rightpart"
+        >
+
+        <RelativeLayout
+            android:id="@+id/festival_lay_sel_infos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/festival_img_sel_infos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/bck_selection" />
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/festival_btn_infos"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icn_information" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/festival_lay_sel_authors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/festival_img_sel_authors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/bck_selection" />
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/festival_btn_authors"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icn_page_authors" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/festival_lay_sel_reminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/festival_img_sel_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/bck_selection" />
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/festival_btn_reminder"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icn_reminder" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/festival_layout_top_left"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="120dp"
+        android:padding="5dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/festival_layout_right"
+        >
+
+        <TextView
+            android:id="@+id/festival_txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="Festival d'angoulême 2019"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="right"
+            >
+
+            <ImageView
+                android:id="@+id/festival_img_editor_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icn_filter"/>
+
+            <TextView
+                android:id="@+id/festival_txt_editor_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginRight="10dp"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:text="Filtre éditeur"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout android:id="@+id/festival_layout_bottom_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="5dp"
+        android:layout_below="@id/festival_layout_top_left"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/festival_layout_right"
+        android:layout_above="@+id/festival_layout_foot">
+
+        <TextView
+            android:id="@+id/festival_txt_subItems_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Informations"/>
+
+        <ListView
+            android:id="@+id/festival_lst_sub_items"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/festival_txt_subItems_title"
+            android:layout_alignParentBottom="true">
+        </ListView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

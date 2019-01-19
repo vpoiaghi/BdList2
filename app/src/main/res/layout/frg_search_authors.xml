@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:whatever="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_lay_back"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="100"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auteur / Société :"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/search_txt_authororsociety"
+            android:layout_marginBottom="10dp"
+            android:inputType="text"
+            style="@style/style_search_edittext"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@drawable/style_search_rightpart"
+        >
+
+        <project.navigation.components.ImageViewButton
+            android:id="@+id/search_img_search"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/btn_search"/>
+
+        <project.navigation.components.ImageViewButton
+                android:id="@+id/search_img_bean"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/btn_bean"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    >
+
+    <!-- header -->
+    <RelativeLayout
+        android:id="@+id/pop_possession_states_layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical|center_horizontal" >
+
+        <TextView
+            android:id="@+id/pop_possession_state_txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Etats" />
+
+    </RelativeLayout>
+
+    <!-- Footer -->
+    <LinearLayout
+        android:id="@+id/pop_possession_states_layout_footer"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/pop_possession_states_btn_ok"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/pop_possession_states_btn_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="Annuler"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/pop_possession_states_layout_header"
+        android:layout_above="@id/pop_possession_states_layout_footer"
+        android:id="@+id/scrollView">
+
+        <TableLayout
+            android:id="@+id/pop_possession_states_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            >
+
+            <TableRow>
+                <ImageView
+                    android:src="@drawable/icn_page_events"
+                    android:layout_margin="10px"
+                    />
+                <ImageView
+                    android:src="@drawable/icn_page_events"
+                    android:layout_margin="10px"
+                    />
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/parameters_txt_app_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="15sp"
+        android:text="Version de l'application :"/>
+    <TextView
+        android:id="@+id/parameters_txt_base_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="15sp"
+        android:text="Version de la base de données :"/>
+
+    <TextView
+        android:id="@+id/parameters_txt_data_updated_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:textSize="15sp"
+        android:text="Date de dernière mise à jour :"/>
+
+    <TextView
+        android:id="@+id/tools_txt_news_days_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:textSize="15sp"
+        android:text="Nb jours d’affichage des nouveautés :"/>
+    <EditText
+        android:id="@+id/parameters_edt_news_days_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_tools_edittext"
+        android:layout_marginBottom="30dp"
+        android:padding="2dp"
+        android:inputType="number"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tools_txt_coming_first_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:textSize="15sp"
+        android:text="Date d'affichage des 'à paraître' :"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/shape_tools_edittext">
+        <EditText
+            android:id="@+id/parameters_edt_coming_first_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:padding="2dp"
+            android:inputType="date"
+            android:textSize="15sp"/>
+        <CheckBox
+            android:id="@+id/parameters_chk_default_coming_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="40"
+            android:textSize="15sp"
+            android:text="MAJ auto."/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tools_txt_events_days_before_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:textSize="15sp"
+        android:text="Nb jours de conservation des évènements :"/>
+    <EditText
+        android:id="@+id/parameters_edt_events_days_before_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_tools_edittext"
+        android:layout_marginBottom="30dp"
+        android:padding="2dp"
+        android:inputType="number"
+        android:textSize="15sp"/>
+
+    <project.navigation.components.ImageViewButton
+        android:id="@+id/tools_btn_save"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/btn_save"/>
+
+</LinearLayout>

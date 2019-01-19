@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header_layout1"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:id="@+id/header_layout2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="3dp"
+        >
+
+        <ImageView
+            android:id="@+id/header_img_appicon"
+            android:layout_width="70px"
+            android:layout_height="70px"
+            android:src="@mipmap/ic_tintin"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="6px"
+            />
+
+        <TextView
+            android:id="@+id/header_txt_appname"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="BdList"
+            android:fontFamily="Arial"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:gravity="bottom"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/header_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/header_img_currentfragment"
+            android:layout_width="64px"
+            android:layout_height="64px"
+            android:src="@drawable/icn_page_editors"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            />
+
+        <LinearLayout
+            android:id="@+id/header_lyt_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            >
+
+            <ImageView
+                android:id="@+id/header_img_round"
+                android:layout_width="35px"
+                android:layout_height="64px"
+                android:src="@drawable/header_round"
+                />
+
+            <ImageView
+                android:id="@+id/header_img_menu"
+                android:layout_width="64px"
+                android:layout_height="64px"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/header_menu"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/header_txt_currentfragment"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/header_img_currentfragment"
+            android:layout_toLeftOf="@id/header_lyt_right"
+            android:layout_centerVertical="true"
+            android:paddingLeft="3px"
+            android:text="Fiches éditeurs"
+            android:fontFamily="Arial"
+            android:textSize="18sp"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

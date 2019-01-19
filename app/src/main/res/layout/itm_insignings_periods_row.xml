@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project.navigation.components.HorizontalListView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itm_insigning_periods_row_cells"
+    android:layout_width="match_parent"
+    android:layout_height="50px"
+    android:dividerHeight="0px"
+    android:divider="@null"
+    >
+
+</project.navigation.components.HorizontalListView>

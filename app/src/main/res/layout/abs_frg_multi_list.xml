@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Bottom navigation bar -->
+    <LinearLayout
+        android:id="@+id/multi_list_layout_foot"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/multi_list_lnl_prev"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:gravity="center_vertical|left"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/multi_list_img_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/previous"/>
+
+            <TextView
+                android:id="@+id/multi_list_txt_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="1"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            android:scaleType="fitXY"
+            android:src="@drawable/bottom_barr"/>
+
+        <LinearLayout
+            android:id="@+id/multi_list_lnl_next"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:gravity="center_vertical|right"
+            android:background="@color/black">
+
+            <TextView
+                android:id="@+id/multi_list_txt_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="3"/>
+
+
+            <ImageView
+                android:id="@+id/multi_list_img_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/next"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/multi_list_layout_right"
+        android:orientation="vertical"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/multi_list_layout_foot"
+        android:gravity="bottom|right"
+        android:background="@drawable/style_search_rightpart"
+        >
+
+    </LinearLayout>
+
+    <RelativeLayout android:id="@+id/multi_list_layout_top_left"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:padding="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/multi_list_layout_right"
+        >
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/multi_list_layout_bottom_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="5dp"
+        android:layout_below="@id/multi_list_layout_top_left"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/multi_list_layout_right"
+        android:layout_above="@id/multi_list_layout_foot">
+
+        <TextView
+            android:id="@+id/multi_list_txt_subItems_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Informations"/>
+
+        <ListView
+            android:id="@+id/multi_list_lst_sub_items"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/multi_list_txt_subItems_title"
+            android:layout_alignParentBottom="true">
+        </ListView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

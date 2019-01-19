@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:whatever="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_lay_back"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="100"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Titre / Nom :"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                />
+
+            <EditText
+                android:id="@+id/search_txt_titleorname"
+                android:layout_marginBottom="10dp"
+                android:inputType="text"
+                style="@style/style_search_edittext"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editeur :"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+
+            <Spinner
+                android:id="@+id/search_spn_editor"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type de para-bd :"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                />
+
+            <Spinner
+                android:id="@+id/search_spn_kind_of_goodies"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:background="@drawable/style_search_rightpart"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingTop="15dp">
+
+                <project.navigation.components.ImageViewButton
+                    android:id="@+id/search_img_search"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/btn_search"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:paddingBottom="30dp">
+
+                <project.navigation.components.ImageViewButton
+                        android:id="@+id/search_img_bean"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/btn_bean"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="100"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="30dp">
+
+            <project.navigation.components.CheckButton
+                android:id="@+id/search_btn_in_possession"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_checkbutton_green"
+                android:src="@drawable/icn_possession_in"/>
+
+            <project.navigation.components.CheckButton
+                android:id="@+id/search_btn_wanted"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_checkbutton_green"
+                android:src="@drawable/icn_possession_wanted"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <project.navigation.components.CheckButton
+                android:id="@+id/search_btn_not_wanted"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_checkbutton_green"
+                android:src="@drawable/icn_possession_not_wanted"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:background="@drawable/style_search_rightpart"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/search_img_check"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/btn_check_all"/>
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/search_img_uncheck"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/btn_show_unchecked"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="100"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <project.navigation.components.CheckButton
+                android:id="@+id/search_btn_others"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_checkbutton_blue"
+                android:src="@drawable/icn_others"/>
+
+            <project.navigation.components.CheckButton
+                android:id="@+id/search_btn_news"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_checkbutton_blue"
+                android:src="@drawable/icn_page_news"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <project.navigation.components.CheckButton
+                android:id="@+id/search_btn_comings"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_checkbutton_blue"
+                android:src="@drawable/icn_page_comings"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:background="@drawable/style_search_rightpart"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/search_img_check2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/btn_check_all"/>
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/search_img_uncheck2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/btn_show_unchecked"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

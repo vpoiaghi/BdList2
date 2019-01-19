@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="90"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/itm_event_txt_date_and_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Titre de l'edition"
+            />
+
+        <TextView
+            android:id="@+id/itm_event_txt_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Numéro de l'édition"
+            />
+
+        <TextView
+            android:id="@+id/itm_event_txt_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Editeur"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/itm_event_img_state"
+            android:layout_width="64px"
+            android:layout_height="64px"
+            android:layout_gravity="right"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/itm_event_img_reminder"
+            android:layout_width="64px"
+            android:layout_height="64px"
+            android:layout_gravity="right"
+            android:layout_marginLeft="5dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

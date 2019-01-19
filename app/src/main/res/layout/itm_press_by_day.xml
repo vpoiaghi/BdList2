@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pressByDay_lyt_back"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/pressByDay_txt_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mercredi 12 décembre 2017"
+        android:textAlignment="center"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <GridView
+        android:id="@+id/pressByDay_grd_items"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:numColumns="3">
+
+    </GridView>
+
+</LinearLayout>

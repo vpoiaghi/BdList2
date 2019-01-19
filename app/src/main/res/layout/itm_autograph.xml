@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/autograph_img"
+        android:layout_width="144px"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:layout_marginRight="5dp"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/autograph_txt_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Auteur"
+            />
+
+        <TextView
+            android:id="@+id/autograph_txt_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Evènement"
+            />
+
+        <TextView
+            android:id="@+id/autograph_txt_date_and_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Date - Lieu"
+            />
+
+        <TextView
+            android:id="@+id/autograph_txt_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Commentaires"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

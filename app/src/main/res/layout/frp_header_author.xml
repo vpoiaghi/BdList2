@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/author_layout_top_left"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    >
+
+    <project.navigation.components.ImageViewButton
+        android:id="@+id/author_img"
+        android:layout_width="250px"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/img_default_integrale"/>
+
+    <TextView
+        android:id="@+id/author_txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/author_img"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Van Hamme, Jean"/>
+
+</RelativeLayout>

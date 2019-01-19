@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Bottom navigation bar -->
+    <LinearLayout
+        android:id="@+id/insigning_layout_foot"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/insigning_lnl_prev"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:gravity="center_vertical|start"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/insigning_img_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/previous"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            android:scaleType="fitXY"
+            android:src="@drawable/bottom_barr"/>
+
+        <LinearLayout
+            android:id="@+id/insigning_lnl_next"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:gravity="center_vertical|right"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/insigning_img_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/next"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/insignings_layout_top"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        >
+
+        <LinearLayout
+            android:id="@+id/insignings_layout_date"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            >
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                />
+
+            <TextView
+                android:id="@+id/insignings_txt_day"
+                android:layout_width="0dp"
+                android:layout_height="60px"
+                android:layout_weight="80"
+                android:gravity="center"
+                android:text="Mercredi 24 janvier 2019"
+            />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/insignings_layout_filter"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="right"
+            >
+
+            <ImageView
+                android:id="@+id/insignings_img_editor_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icn_filter"/>
+
+            <TextView
+                android:id="@+id/insignings_txt_editor_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginRight="10dp"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:text="Filtre éditeur"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/insigning_table_header"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/insignings_layout_top"
+        android:layout_alignParentLeft="true">
+    </LinearLayout>
+
+    <ListView android:id="@+id/insigning_table_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:dividerHeight="0px"
+        android:divider="@null"
+        android:layout_below="@id/insigning_table_header"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@id/insigning_layout_foot">
+    </ListView>
+
+</RelativeLayout>

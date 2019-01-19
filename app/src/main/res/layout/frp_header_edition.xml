@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    >
+
+    <project.navigation.components.ImageViewButton
+        android:id="@+id/edition_img_cover"
+        android:layout_width="250px"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/img_default_integrale"/>
+
+    <LinearLayout
+        android:id="@+id/area7"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/edition_img_cover"
+        android:gravity="center_vertical|right">
+
+        <ImageView
+            android:id="@+id/edition_img_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/icn_state_3"/>
+
+        <ImageView
+            android:id="@+id/edition_img_first_edition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/icn_first_edition"/>
+
+        <ImageView
+            android:id="@+id/edition_img_in_possession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/icn_possession_in"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/edition_txt_seriename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/area7"
+        android:layout_toRightOf="@id/edition_img_cover"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Thorgal"/>
+    <TextView
+        android:id="@+id/edition_txt_editionName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edition_txt_seriename"
+        android:layout_toRightOf="@id/edition_img_cover"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="02 - L'île des mers gelée"/>
+    <TextView
+        android:id="@+id/edition_txt_editorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edition_txt_editionName"
+        android:layout_toRightOf="@id/edition_img_cover"
+        android:layout_marginTop="5dp"
+        android:textSize="13sp"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        android:text="Le Lombard"/>
+
+</RelativeLayout>

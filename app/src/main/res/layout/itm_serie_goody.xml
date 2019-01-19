@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/serie_goody_img_item"
+        android:layout_width="144px"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:layout_marginRight="5dp"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/serie_goody_img_item"
+        android:layout_toLeftOf="@+id/serie_goody_img_possession">
+
+        <TextView
+            android:id="@+id/serie_goody_txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Titre du para-bd" />
+
+        <TextView
+            android:id="@+id/serie_goody_txt_kind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Genre d'objet" />
+
+        <TextView
+            android:id="@+id/serie_goody_txt_editor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Editeur" />
+
+        <TextView
+            android:id="@+id/serie_goody_txt_parutiondate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Parution" />
+
+     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/serie_goody_img_possession"
+        android:layout_width="32px"
+        android:layout_height="32px"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

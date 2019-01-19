@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/title_img_possession"
+        android:layout_width="24px"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/title_txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/title_img_possession"
+        android:textSize="15sp"
+        android:text="Nom du titre"
+        />
+
+</RelativeLayout>
