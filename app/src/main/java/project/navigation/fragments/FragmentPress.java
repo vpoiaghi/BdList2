@@ -74,6 +74,7 @@ public class FragmentPress extends AbstractFragment {
             Date dte = DateUtils.getToday();
 
             // Recherche de l'indice du dernier item avant la date du jour
+            // Note : la liste est triée du plus récent au plus ancien
             while ((i < pressItemsList.size()) && (DateUtils.isAfter(pressItemsList.get(i).getParutionDate().getDate(), dte))) {
                 i++;
             }
