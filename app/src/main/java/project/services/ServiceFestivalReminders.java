@@ -14,20 +14,8 @@ import project.services.abs.Service;
  */
 public class ServiceFestivalReminders extends Service<FestivalReminder, DaoFestivalReminder> {
 
-    private DaoFestivalReminder dao;
-
-    public ServiceFestivalReminders() {
+    protected ServiceFestivalReminders() {
         super();
-    }
-
-    @Override
-    protected DaoFestivalReminder getDao() {
-
-        if (dao == null) {
-            dao = new DaoFestivalReminder();
-        }
-
-        return dao;
     }
 
     public List<FestivalReminder> getByFestival(final Festival festival, final Editor editor) {

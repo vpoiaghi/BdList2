@@ -19,11 +19,11 @@ import project.navigation.adapters.GoodiesAdapter;
 import project.navigation.adapters.StringAdapter;
 import project.navigation.constants.ParametersCodes;
 import project.navigation.fragments.abstract_fragments.FragmentMultiList;
+import project.services.FactoryServices;
 import project.services.ServiceEditions;
 import project.services.ServiceEditors;
 import project.services.ServiceFestivals;
 import project.services.ServiceGoodies;
-import project.services.factory.ServicesFactory;
 
 /**
  * Created by VINCENT on 10/12/2018.
@@ -31,10 +31,10 @@ import project.services.factory.ServicesFactory;
  */
 public class FragmentEditor extends FragmentMultiList {
 
-    private static final ServiceEditions svcEditions = ServicesFactory.get(ServiceEditions.class);
-    private static final ServiceEditors svcEditors = ServicesFactory.get(ServiceEditors.class);
-    private static final ServiceFestivals svcFestivals = ServicesFactory.get(ServiceFestivals.class);
-    private static final ServiceGoodies svcGoodies = ServicesFactory.get(ServiceGoodies.class);
+    private static final ServiceEditions svcEditions = FactoryServices.get(ServiceEditions.class);
+    private static final ServiceEditors svcEditors = FactoryServices.get(ServiceEditors.class);
+    private static final ServiceFestivals svcFestivals = FactoryServices.get(ServiceFestivals.class);
+    private static final ServiceGoodies svcGoodies = FactoryServices.get(ServiceGoodies.class);
 
     private Editor editor;
 

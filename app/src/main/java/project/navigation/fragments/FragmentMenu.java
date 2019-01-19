@@ -8,9 +8,9 @@ import project.donnees.extendedBo.Parameters;
 import project.navigation.components.ImageViewEventButton;
 import project.navigation.constants.ParametersCodes;
 import project.donnees.search.SearchParameters;
+import project.services.FactoryServices;
 import project.services.ServiceEditions;
 import project.services.ServiceParameters;
-import project.services.factory.ServicesFactory;
 
 /**
  *
@@ -18,8 +18,8 @@ import project.services.factory.ServicesFactory;
  */
 public class FragmentMenu extends AbstractFragment {
 
-    private static final ServiceEditions svcEditions = ServicesFactory.get(ServiceEditions.class);
-    private static final ServiceParameters svcParameters = ServicesFactory.get(ServiceParameters.class);
+    private static final ServiceEditions svcEditions = FactoryServices.get(ServiceEditions.class);
+    private static final ServiceParameters svcParameters = FactoryServices.get(ServiceParameters.class);
 
     int newsDaysCount;
     int eventsPastDaysCount;

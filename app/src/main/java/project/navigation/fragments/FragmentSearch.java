@@ -18,9 +18,9 @@ import project.navigation.components.ImageViewButton;
 import project.navigation.constants.ParametersCodes;
 import project.donnees.search.SearchOrder;
 import project.donnees.search.SearchParameters;
+import project.services.FactoryServices;
 import project.services.ServiceEditors;
 import project.services.ServiceGoodies;
-import project.services.factory.ServicesFactory;
 import project.utils.StringUtils;
 
 /**
@@ -29,8 +29,8 @@ import project.utils.StringUtils;
  */
 public class FragmentSearch extends AbstractFragment {
 
-    private static final ServiceEditors svcEditors = ServicesFactory.get(ServiceEditors.class);
-    private static final ServiceGoodies svcGoodies = ServicesFactory.get(ServiceGoodies.class);
+    private static final ServiceEditors svcEditors = FactoryServices.get(ServiceEditors.class);
+    private static final ServiceGoodies svcGoodies = FactoryServices.get(ServiceGoodies.class);
 
     public FragmentSearch() {
         super(R.layout.frg_search);

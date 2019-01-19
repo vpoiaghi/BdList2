@@ -18,11 +18,11 @@ import project.navigation.adapters.SerieGoodiesAdapter;
 import project.navigation.adapters.StringAdapter;
 import project.navigation.constants.ParametersCodes;
 import project.navigation.fragments.abstract_fragments.FragmentMultiList;
+import project.services.FactoryServices;
 import project.services.ServiceEditions;
 import project.services.ServiceGoodies;
 import project.services.ServiceSeries;
 import project.services.ServiceTitles;
-import project.services.factory.ServicesFactory;
 import project.utils.PossessionStates;
 
 /**
@@ -31,10 +31,10 @@ import project.utils.PossessionStates;
  */
 public class FragmentSerie extends FragmentMultiList {
 
-    private static final ServiceEditions svcEditions = ServicesFactory.get(ServiceEditions.class);
-    private static final ServiceGoodies svcGoodies = ServicesFactory.get(ServiceGoodies.class);
-    private static final ServiceSeries svcSeries = ServicesFactory.get(ServiceSeries.class);
-    private static final ServiceTitles svcTitles = ServicesFactory.get(ServiceTitles.class);
+    private static final ServiceEditions svcEditions = FactoryServices.get(ServiceEditions.class);
+    private static final ServiceGoodies svcGoodies = FactoryServices.get(ServiceGoodies.class);
+    private static final ServiceSeries svcSeries = FactoryServices.get(ServiceSeries.class);
+    private static final ServiceTitles svcTitles = FactoryServices.get(ServiceTitles.class);
 
     private Serie serie = null;
     private List<Edition> editionsList = null;

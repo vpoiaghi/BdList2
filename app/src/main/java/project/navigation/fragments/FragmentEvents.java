@@ -13,7 +13,7 @@ import project.navigation.adapters.GlobalEventsAdapter;
 import project.navigation.components.ImageViewButton;
 import project.navigation.constants.ConstantesEvents;
 import project.services.ServiceGlobalEvents;
-import project.services.factory.ServicesFactory;
+import project.services.FactoryServices;
 
 /**
  * Created by VINCENT on 18/05/2016.
@@ -21,7 +21,7 @@ import project.services.factory.ServicesFactory;
  */
 public class FragmentEvents extends AbstractFragment {
 
-    private static final ServiceGlobalEvents svcGlobalEvents = ServicesFactory.get(ServiceGlobalEvents.class);
+    private static final ServiceGlobalEvents svcGlobalEvents = FactoryServices.get(ServiceGlobalEvents.class);
 
     private List<GlobalEvent> globalEventsList = null;
     private GlobalEventsAdapter adapter = null;

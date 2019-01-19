@@ -13,7 +13,7 @@ import framework.donnees.dao.DaoFilters;
 import framework.donnees.dao.TypedDao;
 import project.donnees.search.DaoSearchParameters;
 import project.services.ServiceEditions;
-import project.services.factory.ServicesFactory;
+import project.services.FactoryServices;
 
 /**
  *
@@ -21,7 +21,7 @@ import project.services.factory.ServicesFactory;
  */
 public class DaoSerie extends TypedDao<Serie> {
 
-    private static final ServiceEditions svcEditions = ServicesFactory.get(ServiceEditions.class);
+    private static final ServiceEditions svcEditions = FactoryServices.get(ServiceEditions.class);
 
     private static int COL_POS = 2;
 

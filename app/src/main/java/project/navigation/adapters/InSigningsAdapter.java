@@ -15,7 +15,7 @@ import project.donnees.extendedBo.InSigning;
 import project.navigation.constants.ParametersCodes;
 import project.navigation.fragments.FragmentAuthor;
 import project.services.ServiceAuthors;
-import project.services.factory.ServicesFactory;
+import project.services.FactoryServices;
 
 
 /**
@@ -24,7 +24,7 @@ import project.services.factory.ServicesFactory;
  */
 public class InSigningsAdapter extends ArrayAdapter<InSigning> {
 
-    private static final ServiceAuthors svcAuthors = ServicesFactory.get(ServiceAuthors.class);
+    private static final ServiceAuthors svcAuthors = FactoryServices.get(ServiceAuthors.class);
 
     private final FragmentManagerActivity parentActivity;
     private final int resource;

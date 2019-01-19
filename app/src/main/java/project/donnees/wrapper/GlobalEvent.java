@@ -7,10 +7,10 @@ import java.util.Date;
 import project.donnees.extendedBo.Edition;
 import project.donnees.extendedBo.Event;
 import project.donnees.extendedBo.Goody;
+import project.services.FactoryServices;
 import project.services.ServiceEditions;
 import project.services.ServiceEvents;
 import project.services.ServiceGoodies;
-import project.services.factory.ServicesFactory;
 
 /**
  * Created by VINCENT on 19/01/2019.
@@ -28,9 +28,9 @@ public class GlobalEvent implements Comparable<GlobalEvent> {
     private static final int DEFAULT_PERSISTENCE_DAYS = 5;
     private static final int DEFAULT_STATE = 0;
 
-    private static final ServiceEvents svcEvents = ServicesFactory.get(ServiceEvents.class);
-    private static final ServiceEditions svcEdition = ServicesFactory.get(ServiceEditions.class);
-    private static final ServiceGoodies svcGoody = ServicesFactory.get(ServiceGoodies.class);
+    private static final ServiceEvents svcEvents = FactoryServices.get(ServiceEvents.class);
+    private static final ServiceEditions svcEdition = FactoryServices.get(ServiceEditions.class);
+    private static final ServiceGoodies svcGoody = FactoryServices.get(ServiceGoodies.class);
 
     private EventTypes eventType;
     private Event originalEvent = null;

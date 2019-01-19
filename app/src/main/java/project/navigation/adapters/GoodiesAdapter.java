@@ -16,8 +16,8 @@ import project.donnees.extendedBo.Goody;
 import project.donnees.bo.botypes.SqlDate;
 import project.navigation.constants.ParametersCodes;
 import project.navigation.fragments.FragmentGoody;
+import project.services.FactoryServices;
 import project.services.ServiceAuthors;
-import project.services.factory.ServicesFactory;
 import project.utils.ImageUtils;
 
 
@@ -27,7 +27,7 @@ import project.utils.ImageUtils;
  */
 public class GoodiesAdapter extends ArrayAdapter<Goody> {
 
-    private static final ServiceAuthors svcAuthors = ServicesFactory.get(ServiceAuthors.class);
+    private static final ServiceAuthors svcAuthors = FactoryServices.get(ServiceAuthors.class);
 
     private FragmentManagerActivity parentActivity;
     private int resource;

@@ -12,26 +12,11 @@ import project.services.abs.Service;
  */
 public class ServiceAutographs extends Service<Autograph, DaoAutograph> {
 
-    private DaoAutograph dao;
-
-    public ServiceAutographs() {
+    protected ServiceAutographs() {
         super();
     }
 
-    @Override
-    protected DaoAutograph getDao() {
-
-        if (dao == null) {
-            dao = new DaoAutograph();
-        }
-
-        return dao;
-    }
-
-
     public List<Autograph> getByEdition(final long idEdition) {
-
         return getDao().getByEdition(idEdition);
-
     }
 }

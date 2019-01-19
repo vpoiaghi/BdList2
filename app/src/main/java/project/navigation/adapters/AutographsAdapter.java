@@ -15,8 +15,8 @@ import project.donnees.extendedBo.Author;
 import project.donnees.extendedBo.Autograph;
 import project.navigation.fragments.FragmentImageAutograph;
 import project.navigation.constants.ParametersCodes;
+import project.services.FactoryServices;
 import project.services.ServiceAuthors;
-import project.services.factory.ServicesFactory;
 import project.utils.ImageUtils;
 
 
@@ -26,7 +26,7 @@ import project.utils.ImageUtils;
  */
 public class AutographsAdapter extends ArrayAdapter<Autograph> {
 
-    private static final ServiceAuthors svcAuthors = ServicesFactory.get(ServiceAuthors.class);
+    private static final ServiceAuthors svcAuthors = FactoryServices.get(ServiceAuthors.class);
 
     private FragmentManagerActivity parentActivity;
     private int resource;

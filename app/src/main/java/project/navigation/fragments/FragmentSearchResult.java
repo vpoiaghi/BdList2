@@ -16,10 +16,10 @@ import project.navigation.adapters.SeriesAdapter;
 import project.navigation.constants.ParametersCodes;
 import project.donnees.search.SearchParameters;
 import project.navigation.fragments.abstract_fragments.FragmentMultiList;
+import project.services.FactoryServices;
 import project.services.ServiceEditions;
 import project.services.ServiceGoodies;
 import project.services.ServiceSeries;
-import project.services.factory.ServicesFactory;
 
 /**
  * Created by VINCENT on 27/02/2016.
@@ -29,9 +29,9 @@ public class FragmentSearchResult extends FragmentMultiList {
 
     private SearchParameters searchParameters;
 
-    private static final ServiceEditions svcEditions = ServicesFactory.get(ServiceEditions.class);
-    private static final ServiceGoodies svcGoodies = ServicesFactory.get(ServiceGoodies.class);
-    private static final ServiceSeries svcSeries = ServicesFactory.get(ServiceSeries.class);
+    private static final ServiceEditions svcEditions = FactoryServices.get(ServiceEditions.class);
+    private static final ServiceGoodies svcGoodies = FactoryServices.get(ServiceGoodies.class);
+    private static final ServiceSeries svcSeries = FactoryServices.get(ServiceSeries.class);
 
     private List<Serie> seriesList;
     private List<Edition> editionsList;

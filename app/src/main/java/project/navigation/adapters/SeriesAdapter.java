@@ -14,8 +14,8 @@ import framework.activity.FragmentManagerActivity;
 import project.donnees.extendedBo.Serie;
 import project.navigation.fragments.FragmentSerie;
 import project.navigation.constants.ParametersCodes;
+import project.services.FactoryServices;
 import project.services.ServiceSeries;
-import project.services.factory.ServicesFactory;
 
 
 /**
@@ -24,7 +24,7 @@ import project.services.factory.ServicesFactory;
  */
 public class SeriesAdapter extends ArrayAdapter<Serie> {
 
-    private static final ServiceSeries svcSeries = ServicesFactory.get(ServiceSeries.class);
+    private static final ServiceSeries svcSeries = FactoryServices.get(ServiceSeries.class);
 
     private FragmentManagerActivity parentActivity;
     private int resource;

@@ -10,7 +10,7 @@ import project.donnees.bo.BoInSigning;
 import project.services.ServiceAuthors;
 import project.services.ServiceEditors;
 import project.services.ServiceFestivals;
-import project.services.factory.ServicesFactory;
+import project.services.FactoryServices;
 
 /**
  * Created by VINCENT on 18/05/2016.
@@ -22,9 +22,9 @@ public class InSigning extends BoInSigning {
     private Festival festival = null;
     private Editor editor = null;
 
-    final static ServiceAuthors svcAuthors = ServicesFactory.get(ServiceAuthors.class);
-    final static ServiceFestivals svcFestivals = ServicesFactory.get(ServiceFestivals.class);
-    final static ServiceEditors svcEditors = ServicesFactory.get(ServiceEditors.class);
+    final static ServiceAuthors svcAuthors = FactoryServices.get(ServiceAuthors.class);
+    final static ServiceFestivals svcFestivals = FactoryServices.get(ServiceFestivals.class);
+    final static ServiceEditors svcEditors = FactoryServices.get(ServiceEditors.class);
 
 
     public List<Long> getIdEditionsList() {

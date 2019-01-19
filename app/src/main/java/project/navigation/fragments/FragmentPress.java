@@ -14,15 +14,15 @@ import framework.fragments.AbstractFragment;
 import framework.tools.DateUtils;
 import project.donnees.wrapper.PressItemsList;
 import project.navigation.adapters.PressAdapter;
+import project.services.FactoryServices;
 import project.services.ServicePress;
-import project.services.factory.ServicesFactory;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentPress extends AbstractFragment {
 
-    private static final ServicePress svcPress = ServicesFactory.get(ServicePress.class);
+    private static final ServicePress svcPress = FactoryServices.get(ServicePress.class);
 
     private List<PressItemsList> pressItemsList;
     private PressAdapter adapter;
@@ -43,7 +43,7 @@ public class FragmentPress extends AbstractFragment {
 
     @Override
     protected void loadFragment() {
-        pressItemsList = svcPress.getItems();
+        pressItemsList = svcPress.getAll();
         adapter = new PressAdapter(getParentActivity(), R.layout.itm_press_by_day, pressItemsList);
     }
 

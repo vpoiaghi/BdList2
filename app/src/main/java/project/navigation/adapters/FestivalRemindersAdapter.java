@@ -13,7 +13,7 @@ import bdlist.bdlist.R;
 import framework.activity.FragmentManagerActivity;
 import project.donnees.extendedBo.FestivalReminder;
 import project.services.ServiceEditors;
-import project.services.factory.ServicesFactory;
+import project.services.FactoryServices;
 
 
 /**
@@ -22,7 +22,7 @@ import project.services.factory.ServicesFactory;
  */
 public class FestivalRemindersAdapter extends ArrayAdapter<FestivalReminder> {
 
-    private static final ServiceEditors svcEditors = ServicesFactory.get(ServiceEditors.class);
+    private static final ServiceEditors svcEditors = FactoryServices.get(ServiceEditors.class);
 
     private final FragmentManagerActivity parentActivity;
     private final int resource;

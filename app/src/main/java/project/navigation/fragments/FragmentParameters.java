@@ -12,9 +12,9 @@ import framework.fragments.AbstractFragment;
 import project.donnees.extendedBo.Parameters;
 import project.donnees.bo.botypes.SqlDate;
 import project.navigation.components.ImageViewButton;
+import project.services.FactoryServices;
 import project.services.ServiceParameters;
 import framework.tools.DateUtils;
-import project.services.factory.ServicesFactory;
 
 /**
  *
@@ -22,7 +22,7 @@ import project.services.factory.ServicesFactory;
  */
 public class FragmentParameters extends AbstractFragment {
 
-    private static final ServiceParameters svcParameters = ServicesFactory.get(ServiceParameters.class);
+    private static final ServiceParameters svcParameters = FactoryServices.get(ServiceParameters.class);
     private Parameters parameters;
 
     public FragmentParameters() {

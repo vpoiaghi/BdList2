@@ -11,7 +11,6 @@ import project.donnees.search.DaoSearchParameters;
 import project.donnees.search.SearchOrder;
 import project.donnees.search.SearchParameters;
 import project.services.abs.Service;
-import project.services.factory.ServicesFactory;
 import project.utils.PossessionStates;
 
 /**
@@ -20,23 +19,11 @@ import project.utils.PossessionStates;
  */
 public class ServiceEditions extends Service<Edition, DaoEdition> {
 
-    private DaoEdition dao;
-    private static final ServiceTitles svcTitles = ServicesFactory.get(ServiceTitles.class);
+    private static final ServiceTitles svcTitles = FactoryServices.get(ServiceTitles.class);
 
-    public ServiceEditions() {
+    protected ServiceEditions() {
         super();
     }
-
-    @Override
-    protected DaoEdition getDao() {
-
-        if (dao == null) {
-            dao = new DaoEdition();
-        }
-
-        return dao;
-    }
-
 
     public List<Edition> search(final SearchParameters searchParameters) {
         return search(getSearchParameters(searchParameters));

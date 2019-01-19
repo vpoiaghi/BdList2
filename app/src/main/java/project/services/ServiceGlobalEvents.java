@@ -9,17 +9,16 @@ import project.donnees.extendedBo.Event;
 import project.donnees.extendedBo.Goody;
 import project.donnees.wrapper.GlobalEvent;
 import project.services.abs.IService;
-import project.services.factory.ServicesFactory;
 
 /**
- *
  * Created by VINCENT on 05/03/2016.
+ *
  */
 public class ServiceGlobalEvents implements IService {
 
-    private static final ServiceEditions svcEditions = ServicesFactory.get(ServiceEditions.class);
-    private static final ServiceGoodies svcGoodies = ServicesFactory.get(ServiceGoodies.class);
-    private static final ServiceEvents svcEvents = ServicesFactory.get(ServiceEvents.class);
+    private static final ServiceEditions svcEditions = FactoryServices.get(ServiceEditions.class);
+    private static final ServiceGoodies svcGoodies = FactoryServices.get(ServiceGoodies.class);
+    private static final ServiceEvents svcEvents = FactoryServices.get(ServiceEvents.class);
 
     public ServiceGlobalEvents() {
         super();

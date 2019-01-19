@@ -13,22 +13,9 @@ import project.utils.Constantes;
  */
 public class ServiceParameters extends Service<Parameters, DaoParameters> {
 
-    private DaoParameters dao;
-
-    public ServiceParameters() {
+    protected ServiceParameters() {
         super();
     }
-
-    @Override
-    protected DaoParameters getDao() {
-
-        if (dao == null) {
-            dao = new DaoParameters();
-        }
-
-        return dao;
-    }
-
 
     public Parameters getParameters() {
 

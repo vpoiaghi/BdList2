@@ -19,20 +19,8 @@ import project.services.abs.Service;
  */
 public class ServiceGoodies extends Service<Goody, DaoGoody> {
 
-    private DaoGoody dao;
-
-    public ServiceGoodies() {
+    protected ServiceGoodies() {
         super();
-    }
-
-    @Override
-    protected DaoGoody getDao() {
-
-        if (dao == null) {
-            dao = new DaoGoody();
-        }
-
-        return dao;
     }
 
     public long getCountBySerie(final Serie serie) {

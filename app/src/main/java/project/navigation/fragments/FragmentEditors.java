@@ -8,8 +8,8 @@ import bdlist.bdlist.R;
 import project.navigation.fragments.abstract_fragments.FragmentList;
 import project.navigation.adapters.EditorsAdapter;
 import project.donnees.extendedBo.Editor;
+import project.services.FactoryServices;
 import project.services.ServiceEditors;
-import project.services.factory.ServicesFactory;
 
 /**
  * Created by VINCENT on 27/02/2016.
@@ -17,7 +17,7 @@ import project.services.factory.ServicesFactory;
  */
 public class FragmentEditors extends FragmentList {
 
-    private static final ServiceEditors svcEditors = ServicesFactory.get(ServiceEditors.class);
+    private static final ServiceEditors svcEditors = FactoryServices.get(ServiceEditors.class);
 
     public FragmentEditors() {
         super();

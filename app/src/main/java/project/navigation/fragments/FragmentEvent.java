@@ -15,11 +15,11 @@ import project.donnees.wrapper.GlobalEvent;
 import project.navigation.activities.PopupPossessionStatesActivity;
 import project.navigation.constants.ConstantesEvents;
 import project.navigation.constants.ParametersCodes;
+import project.services.FactoryServices;
 import project.services.ServiceEditions;
 import project.services.ServiceGlobalEvents;
 import project.services.ServiceGoodies;
 import project.donnees.extendedBo.Event;
-import project.services.factory.ServicesFactory;
 import project.utils.ImageUtils;
 
 /**
@@ -28,10 +28,10 @@ import project.utils.ImageUtils;
  */
 public class FragmentEvent extends AbstractFragment {
 
-    private static final ServiceEditions svcEditions = ServicesFactory.get(ServiceEditions.class);
-    private static final ServiceGoodies svcGoodies = ServicesFactory.get(ServiceGoodies.class);
+    private static final ServiceEditions svcEditions = FactoryServices.get(ServiceEditions.class);
+    private static final ServiceGoodies svcGoodies = FactoryServices.get(ServiceGoodies.class);
 
-    private static final ServiceGlobalEvents svcGlobalEvents = ServicesFactory.get(ServiceGlobalEvents.class);
+    private static final ServiceGlobalEvents svcGlobalEvents = FactoryServices.get(ServiceGlobalEvents.class);
 
     private GlobalEvent globalEvent = null;
 

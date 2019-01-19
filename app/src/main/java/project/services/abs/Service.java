@@ -1,16 +1,18 @@
 package project.services.abs;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import framework.donnees.bo.Bo;
 import framework.donnees.dao.TypedDao;
+import project.donnees.dao.FactoryDao;
 import project.donnees.extendedBo.Parameters;
 import project.donnees.bo.botypes.SqlDate;
 import project.donnees.search.DaoSearchParameters;
 import project.donnees.search.SearchParameters;
+import project.services.FactoryServices;
 import project.services.ServiceParameters;
 import framework.tools.DateUtils;
-import project.services.factory.ServicesFactory;
 import project.utils.ListUtils;
 
 /**
@@ -19,14 +21,34 @@ import project.utils.ListUtils;
  */
 public abstract class Service<BoType extends Bo, DaoType extends TypedDao<BoType>> implements IService {
 
-    protected abstract DaoType getDao();
+    protected DaoType dao;
 
     protected Service() {
     }
 
+    protected DaoType getDao() {
+
+        if (dao == null) {
+
+            // récupération des types générique de l'instance courante de Service
+            // On obtien dans le ParameterizedType le type du Bo et le Type du Dao courant
+            ParameterizedType parameterizedType = (ParameterizedType) getClass().getGenericSuperclass();
+
+            // Récupération du type du Dao
+            @SuppressWarnings("unchecked")
+            Class<DaoType> daoType = (Class<DaoType>) parameterizedType.getActualTypeArguments()[1];
+
+            // Récupération d'instance unique du dao
+            dao = FactoryDao.get(daoType);
+        }
+
+        return dao;
+    }
+
+
     protected DaoSearchParameters getSearchParameters(final SearchParameters searchParameters) {
 
-        final ServiceParameters svcParameters = ServicesFactory.get(ServiceParameters.class);
+        final ServiceParameters svcParameters = FactoryServices.get(ServiceParameters.class);
         final Parameters appParameters = svcParameters.getParameters();
 
         final SqlDate firstComingDate = appParameters.getFirstComingDate();

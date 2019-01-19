@@ -22,9 +22,9 @@ import project.navigation.adapters.AuthorsAdapter;
 import project.navigation.adapters.StringAdapter;
 import project.navigation.constants.ParametersCodes;
 import project.navigation.fragments.abstract_fragments.FragmentMultiList;
+import project.services.FactoryServices;
 import project.services.ServiceAuthors;
 import project.services.ServiceGoodies;
-import project.services.factory.ServicesFactory;
 import project.utils.Constantes;
 import project.utils.ImageUtils;
 
@@ -34,8 +34,8 @@ import project.utils.ImageUtils;
  */
 public class FragmentGoody extends FragmentMultiList {
 
-    private static final ServiceGoodies svcGoodies = ServicesFactory.get(ServiceGoodies.class);
-    private static final ServiceAuthors svcAuthors = ServicesFactory.get(ServiceAuthors.class);
+    private static final ServiceGoodies svcGoodies = FactoryServices.get(ServiceGoodies.class);
+    private static final ServiceAuthors svcAuthors = FactoryServices.get(ServiceAuthors.class);
 
     private Goody goody = null;
     private Goody prevGoody = null;

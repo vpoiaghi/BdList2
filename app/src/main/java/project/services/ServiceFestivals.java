@@ -12,20 +12,8 @@ import project.services.abs.Service;
  */
 public class ServiceFestivals extends Service<Festival, DaoFestival> {
 
-    private DaoFestival dao;
-
-    public ServiceFestivals() {
+    protected ServiceFestivals() {
         super();
-    }
-
-    @Override
-    protected DaoFestival getDao() {
-
-        if (dao == null) {
-            dao = new DaoFestival();
-        }
-
-        return dao;
     }
 
     public List<Festival> getByName(final String filter) {

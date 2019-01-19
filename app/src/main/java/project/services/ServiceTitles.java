@@ -13,20 +13,8 @@ import project.services.abs.Service;
  */
 public class ServiceTitles extends Service<Title, DaoTitle> {
 
-    private DaoTitle dao;
-
-    public ServiceTitles() {
+    protected ServiceTitles() {
         super();
-    }
-
-    @Override
-    protected DaoTitle getDao() {
-
-        if (dao == null) {
-            dao = new DaoTitle();
-        }
-
-        return dao;
     }
 
     public List<Title> getBySerie(Serie serie) {

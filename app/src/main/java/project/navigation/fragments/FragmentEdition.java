@@ -27,10 +27,10 @@ import project.navigation.adapters.TitlesAdapter;
 import project.navigation.adapters.OtherEditionsAdapter;
 import project.navigation.constants.ParametersCodes;
 import project.navigation.fragments.abstract_fragments.FragmentMultiList;
+import project.services.FactoryServices;
 import project.services.ServiceAutographs;
 import project.services.ServiceEditions;
 import project.services.ServiceTitles;
-import project.services.factory.ServicesFactory;
 import project.utils.ImageUtils;
 import project.utils.Constantes;
 
@@ -40,9 +40,9 @@ import project.utils.Constantes;
  */
 public class FragmentEdition extends FragmentMultiList implements OtherEditionsAdapter.OnRowClickListener {
 
-    private static final ServiceEditions svcEditions = ServicesFactory.get(ServiceEditions.class);
-    private static final ServiceAutographs svcAutographs = ServicesFactory.get(ServiceAutographs.class);
-    private static final ServiceTitles svcTitles = ServicesFactory.get(ServiceTitles.class);
+    private static final ServiceEditions svcEditions = FactoryServices.get(ServiceEditions.class);
+    private static final ServiceAutographs svcAutographs = FactoryServices.get(ServiceAutographs.class);
+    private static final ServiceTitles svcTitles = FactoryServices.get(ServiceTitles.class);
 
     private Edition edition;
     private Edition prevEdition = null;

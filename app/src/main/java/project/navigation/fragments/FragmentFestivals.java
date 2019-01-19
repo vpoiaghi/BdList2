@@ -9,7 +9,7 @@ import project.navigation.fragments.abstract_fragments.FragmentList;
 import project.donnees.extendedBo.Festival;
 import project.navigation.adapters.FestivalsAdapter;
 import project.services.ServiceFestivals;
-import project.services.factory.ServicesFactory;
+import project.services.FactoryServices;
 
 /**
  *
@@ -17,7 +17,7 @@ import project.services.factory.ServicesFactory;
  */
 public class FragmentFestivals extends FragmentList {
 
-    private static final ServiceFestivals svcFestivals = ServicesFactory.get(ServiceFestivals.class);
+    private static final ServiceFestivals svcFestivals = FactoryServices.get(ServiceFestivals.class);
 
     public FragmentFestivals() {
         super();

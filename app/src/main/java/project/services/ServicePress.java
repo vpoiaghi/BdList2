@@ -3,35 +3,32 @@ package project.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import framework.donnees.bo.Bo;
-import framework.donnees.dao.TypedDao;
 import project.donnees.extendedBo.Edition;
 import project.donnees.extendedBo.Goody;
 import project.donnees.bo.botypes.SqlDate;
 import project.donnees.wrapper.PressItem;
 import project.donnees.wrapper.PressItemsList;
-import project.services.abs.Service;
-import project.services.factory.ServicesFactory;
+import project.services.abs.IService;
 
 /**
  * Created by VINCENT on 16/12/2017.
  *
  */
-public class ServicePress extends Service<Bo, TypedDao<Bo>> {
+public class ServicePress implements IService {
 
-    private static final ServiceEditions svcEditions = ServicesFactory.get(ServiceEditions.class);
-    private static final ServiceGoodies svcGoodies = ServicesFactory.get(ServiceGoodies.class);
+    private static final ServiceEditions svcEditions = FactoryServices.get(ServiceEditions.class);
+    private static final ServiceGoodies svcGoodies = FactoryServices.get(ServiceGoodies.class);
 
-    public ServicePress() {
+    protected ServicePress() {
         super();
     }
 
     @Override
-    protected TypedDao<Bo> getDao() {
-        return null;
+    public long getCount() {
+        return getAll().size();
     }
 
-    public List<PressItemsList> getItems() {
+    public List<PressItemsList> getAll() {
 
         List<PressItemsList> pressItemsListByDate = new ArrayList<>();
 

@@ -12,7 +12,6 @@ import project.donnees.extendedBo.Festival;
 import project.donnees.extendedBo.InSigning;
 import project.donnees.dao.DaoInSigning;
 import project.services.abs.Service;
-import project.services.factory.ServicesFactory;
 
 /**
  * Created by VINCENT on 05/03/2016.
@@ -20,24 +19,11 @@ import project.services.factory.ServicesFactory;
  */
 public class ServiceInSignings extends Service<InSigning, DaoInSigning> {
 
-    private static final ServiceAuthors svcAuthors = ServicesFactory.get(ServiceAuthors.class);
-    private static final ServiceEditors svcEditors = ServicesFactory.get(ServiceEditors.class);
+    private static final ServiceAuthors svcAuthors = FactoryServices.get(ServiceAuthors.class);
+    private static final ServiceEditors svcEditors = FactoryServices.get(ServiceEditors.class);
 
-    //private static final DaoInSigning daoInSigning = new DaoInSigning();
-    private DaoInSigning dao;
-
-    public ServiceInSignings() {
+    protected ServiceInSignings() {
         super();
-    }
-
-    @Override
-    protected DaoInSigning getDao() {
-
-        if (dao == null) {
-            dao = new DaoInSigning();
-        }
-
-        return dao;
     }
 
     public List<InSigning> get(final Festival festival) {

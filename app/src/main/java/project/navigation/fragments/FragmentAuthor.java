@@ -20,7 +20,7 @@ import project.navigation.fragments.abstract_fragments.FragmentMultiList;
 import project.services.ServiceAuthors;
 import project.services.ServiceEditions;
 import project.services.ServiceGoodies;
-import project.services.factory.ServicesFactory;
+import project.services.FactoryServices;
 import project.utils.ImageUtils;
 
 /**
@@ -29,9 +29,9 @@ import project.utils.ImageUtils;
  */
 public class FragmentAuthor extends FragmentMultiList {
 
-    private static final ServiceAuthors svcAuthors = ServicesFactory.get(ServiceAuthors.class);
-    private static final ServiceGoodies svcGoodies = ServicesFactory.get(ServiceGoodies.class);
-    private static final ServiceEditions svcEditions = ServicesFactory.get(ServiceEditions.class);
+    private static final ServiceAuthors svcAuthors = FactoryServices.get(ServiceAuthors.class);
+    private static final ServiceGoodies svcGoodies = FactoryServices.get(ServiceGoodies.class);
+    private static final ServiceEditions svcEditions = FactoryServices.get(ServiceEditions.class);
 
     private Author author;
 

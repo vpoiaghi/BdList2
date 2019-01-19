@@ -1,6 +1,5 @@
 package project.navigation.fragments;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -29,7 +28,6 @@ import framework.tools.DateTimeUtils;
 import framework.tools.DateUtils;
 import framework.tools.PhoneUtils;
 import project.donnees.extendedBo.Editor;
-import project.donnees.extendedBo.Event;
 import project.donnees.extendedBo.Festival;
 import project.donnees.extendedBo.InSigning;
 import project.donnees.wrapper.insigning.ICell;
@@ -37,15 +35,14 @@ import project.donnees.wrapper.insigning.PeriodEditor;
 import project.donnees.wrapper.insigning.PeriodsTable;
 import project.donnees.wrapper.insigning.UsedPeriod;
 import project.navigation.activities.PopupPeriodCommentsActivity;
-import project.navigation.activities.PopupPossessionStatesActivity;
 import project.navigation.adapters.InSigningPeriodsTableAdapter;
 import project.navigation.sliding_menu.SlidingMenuItem;
 import project.navigation.constants.ConstantesInSigning;
 import project.navigation.constants.ParametersCodes;
+import project.services.FactoryServices;
 import project.services.ServiceEditors;
 import project.services.ServiceFestivals;
 import project.services.ServiceInSignings;
-import project.services.factory.ServicesFactory;
 
 /**
  * Created by VINCENT on 23/12/2018.
@@ -55,9 +52,9 @@ public class FragmentInSignings extends AbstractFragment {
 
     Parcelable gridViewState;
 
-    private static final ServiceEditors svcEditors = ServicesFactory.get(ServiceEditors.class);
-    private static final ServiceFestivals svcFestivals = ServicesFactory.get(ServiceFestivals.class);
-    private static final ServiceInSignings svcInSignings = ServicesFactory.get(ServiceInSignings.class);
+    private static final ServiceEditors svcEditors = FactoryServices.get(ServiceEditors.class);
+    private static final ServiceFestivals svcFestivals = FactoryServices.get(ServiceFestivals.class);
+    private static final ServiceInSignings svcInSignings = FactoryServices.get(ServiceInSignings.class);
 
     private Festival festival = null;
     private Editor editor = null;

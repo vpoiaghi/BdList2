@@ -3,6 +3,7 @@ package project.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import project.donnees.dao.FactoryDao;
 import project.donnees.extendedBo.Author;
 import project.donnees.extendedBo.Goody;
 import project.donnees.dao.DaoAuthor;
@@ -16,21 +17,8 @@ import project.services.abs.Service;
  */
 public class ServiceAuthors extends Service<Author, DaoAuthor> {
 
-    //private static final DaoAuthor daoAuthor = new DaoAuthor();
-    private DaoAuthor dao;
-
-    public ServiceAuthors() {
+    protected ServiceAuthors() {
         super();
-    }
-
-    @Override
-    protected DaoAuthor getDao() {
-
-        if (dao == null) {
-            dao = new DaoAuthor();
-        }
-
-        return dao;
     }
 
     public List<Author> search(final SearchAuthorsParameters searchParameters) {

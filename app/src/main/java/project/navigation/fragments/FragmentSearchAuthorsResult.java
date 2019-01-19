@@ -21,7 +21,7 @@ import project.navigation.adapters.AuthorsAdapter;
 import project.navigation.adapters.SocietiesAdapter;
 import project.navigation.constants.ParametersCodes;
 import project.services.ServiceAuthors;
-import project.services.factory.ServicesFactory;
+import project.services.FactoryServices;
 
 /**
  *
@@ -29,7 +29,7 @@ import project.services.factory.ServicesFactory;
  */
 public class FragmentSearchAuthorsResult extends AbstractFragment {
 
-    private static final ServiceAuthors svcAuthor = ServicesFactory.get(ServiceAuthors.class);
+    private static final ServiceAuthors svcAuthor = FactoryServices.get(ServiceAuthors.class);
 
     private static final int INDEX_AUTHORS = 0;
     private static final int INDEX_SOCIETIES = 1;

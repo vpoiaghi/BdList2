@@ -2,15 +2,12 @@ package project.services;
 
 import java.util.List;
 
-import project.donnees.dao.DaoInSigning;
 import project.donnees.extendedBo.Serie;
 import project.donnees.extendedBo.Title;
 import project.donnees.dao.DaoSerie;
 import project.donnees.search.DaoSearchParameters;
 import project.donnees.search.SearchParameters;
 import project.services.abs.Service;
-import project.services.factory.ServicesFactory;
-import project.utils.ListUtils;
 
 /**
  * Created by VINCENT on 05/03/2016.
@@ -18,21 +15,10 @@ import project.utils.ListUtils;
  */
 public class ServiceSeries extends Service<Serie, DaoSerie> {
 
-    private DaoSerie dao;
-    private static final ServiceTitles svcTitles = ServicesFactory.get(ServiceTitles.class);
+    private static final ServiceTitles svcTitles = FactoryServices.get(ServiceTitles.class);
 
-    public ServiceSeries() {
+    protected ServiceSeries() {
         super();
-    }
-
-    @Override
-    protected DaoSerie getDao() {
-
-        if (dao == null) {
-            dao = new DaoSerie();
-        }
-
-        return dao;
     }
 
     public List<Serie> search(final SearchParameters searchParameters) {
