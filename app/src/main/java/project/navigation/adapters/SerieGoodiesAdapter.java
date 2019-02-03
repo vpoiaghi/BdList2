@@ -67,13 +67,21 @@ public class SerieGoodiesAdapter extends ArrayAdapter<Goody> {
         txtEditor.setText(goody.getEditorName());
 
         final TextView txtParutionDate = (TextView) row.findViewById(R.id.serie_goody_txt_parutiondate);
-        txtParutionDate.setText(getParutionDate(goody));
-
-        if (DateUtils.isAfter(goody.getParutionDate().getDate(), DateUtils.getToday())) {
-            txtParutionDate.setBackgroundColor(Color.YELLOW);
-        } else {
+        final SqlDate parutionDate = goody.getParutionDate();
+        final String parutionText;
+        if (parutionDate == null) {
+            parutionText = "Parution : inconnue";
             txtParutionDate.setBackgroundColor(Color.TRANSPARENT);
+        } else {
+            parutionText = "Parution : " + parutionDate.toString();
+
+            if (DateUtils.isAfter(parutionDate.getDate(), DateUtils.getToday())) {
+                txtParutionDate.setBackgroundColor(Color.YELLOW);
+            } else {
+                txtParutionDate.setBackgroundColor(Color.TRANSPARENT);
+            }
         }
+        txtParutionDate.setText(parutionText);
 
         final ImageView imgGoody = (ImageView) row.findViewById(R.id.serie_goody_img_item);
         ImageUtils.loadGoodyImage(imgGoody, goody);

@@ -6,12 +6,10 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
@@ -19,13 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bdlist.bdlist.R;
-import framework.dialogboxes.IPopupListener;
 import framework.tools.PhoneUtils;
 import project.utils.ImageUtils;
 import project.utils.PossessionStates;
 
 /**
  * Created by VINCENT on 25/11/2018.
+ *
  * https://www.youtube.com/watch?v=fn5OlqQuOCk
  */
 public class PopupPossessionStatesActivity extends Activity {
@@ -38,49 +36,6 @@ public class PopupPossessionStatesActivity extends Activity {
     private Integer selectedState = -1;
     private int popup_width = 0;
     private int popup_height = 0;
-    private IPopupListener listener;
-
-    public void showDialog(IPopupListener listener) {
-
-        this.listener = listener;
-
-        Activity a = listener.getCurentActivity();
-        Intent intent = new Intent(a, MyActivity.class);
-        a.startActivity(intent);
-
-        /*MyActivity a = new MyActivity(listener);
-
-        final Intent itt = new Intent(a, PopupPossessionStatesActivity.class);
-        Uri u = Uri.parse("1");
-        itt.setData(u);
-        a.startActivityForResult(itt, PopupPossessionStatesActivity.POPUP_REQUEST_CODE);
-        */
-    }
-
-    private class MyActivity extends Activity {
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-        }
-
-        //private IPopupListener listener;
-
-        /*public MyActivity(IPopupListener listener) {
-            super();
-            this.listener = listener;
-        }*/
-
-        @Override
-        public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-            Uri u = data.getData();
-            String strPossessionState = u.toString();
-            Integer possessionState = Integer.parseInt(strPossessionState);
-
-            listener.popupResult(requestCode, resultCode, possessionState);
-        }
-    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,6 +75,11 @@ public class PopupPossessionStatesActivity extends Activity {
 
         addStatesButtons();
         changeSelection(Integer.parseInt(strPossessionState));
+    }
+
+    @Override
+    public void finishActivityFromChild(Activity child, int requestCode) {
+        super.finishActivityFromChild(child, requestCode);
     }
 
     private void addStatesButtons() {

@@ -5,6 +5,7 @@ import framework.activity.FragmentManagerActivity;
 import framework.activity.Header;
 import project.donnees.database.SQLiteDbDef;
 import project.navigation.fragments.FragmentAuthor;
+import project.navigation.fragments.FragmentBarCode;
 import project.navigation.fragments.FragmentEditor;
 import project.navigation.fragments.FragmentFestival;
 import project.navigation.fragments.FragmentFestivals;
@@ -74,6 +75,7 @@ public class MainActivity extends FragmentManagerActivity {
         addFragment(new FragmentFestivals());
         addFragment(new FragmentFestival());
         addFragment(new FragmentInSignings());
+        addFragment(new FragmentBarCode());
     }
 
 }

@@ -74,6 +74,7 @@ public class FragmentMenu extends AbstractFragment {
         initLink(R.id.menu_lay_item_press, FragmentPress.class.getName());
         initLink(R.id.menu_lay_item_festivals, FragmentFestivals.class.getName(), ParametersCodes.ID_EDITOR, null);
         initLink(R.id.menu_lay_item_tools, FragmentParameters.class.getName());
+        initLink(R.id.menu_lay_item_barcode, FragmentBarCode.class.getName());
 
     }
 

@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 
 import bdlist.bdlist.R;
-import framework.dialogboxes.IPopupListener;
 import framework.tools.PhoneUtils;
 import project.utils.ImageUtils;
 import project.utils.PossessionStates;

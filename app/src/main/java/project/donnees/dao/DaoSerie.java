@@ -5,7 +5,9 @@ import android.database.Cursor;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import project.donnees.extendedBo.Edition;
 import project.donnees.extendedBo.Serie;
@@ -124,26 +126,22 @@ public class DaoSerie extends TypedDao<Serie> {
 
                 if (seriesListFromSeries.size() > 0) {
 
-                    Collections.sort(seriesList);
+                    Map<Long, Serie> mapSeries = new HashMap<>();
 
-                    int i = 1;
-                    long oldSerieId = seriesList.get(0).getId();
-                    long curSerieId;
-
-                    while (i < seriesList.size()) {
-
-                        curSerieId = seriesList.get(i).getId();
-
-                        if (oldSerieId == curSerieId) {
-                            seriesList.remove(i);
-                        } else {
-                            oldSerieId = curSerieId;
-                            i++;
-                        }
-
+                    for (Serie s : seriesList) {
+                        mapSeries.put(s.getId(), s);
                     }
+
+                    for (Serie s : seriesListFromSeries) {
+                        mapSeries.put(s.getId(), s);
+                    }
+
+                    seriesList.clear();
+                    seriesList.addAll(mapSeries.values());
                 }
             }
+
+            Collections.sort(seriesList);
 
         } catch (IllegalArgumentException e) {
             seriesList = new ArrayList<>();

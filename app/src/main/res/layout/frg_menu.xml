@@ -280,6 +280,33 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/menu_lay_item_barcode"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10px"
+            >
+
+            <project.navigation.components.ImageViewButton
+                android:id="@+id/menu_img_barcode"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/icn_page_tools" />
+
+            <TextView
+                android:id="@+id/menu_txt_barcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/menu_text_size"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5px"
+                android:text="Lecteur code barre"
+                />
+
+        </LinearLayout>
+
     </LinearLayout>
 
     </ScrollView>

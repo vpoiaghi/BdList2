@@ -38,7 +38,7 @@ public class SearchParameters implements Serializable {
         SearchParameters sp = new SearchParameters();
         sp.setNews(false);
         sp.setOthers(false);
-        sp.setOrder(SearchOrder.ParutionDateDesc);
+        sp.setOrder(SearchOrder.ParutionDateAsc);
         return sp;
     }
 

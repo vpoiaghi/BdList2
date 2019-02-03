@@ -13,6 +13,10 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -49,12 +53,11 @@ public abstract class FragmentManagerActivity extends FragmentActivity implement
 
     private String defaultFragmentName = null;
 
+    private static AbstractFragment currentFragment;
     private static FragmentParameters fragmentParameters = null;
 
-    //private static Stack<String> fragmentsStack = null;
     private static Stack<StackedFragment> fragmentsStack = null;
-    //private List<AbstractFragment> fragmentsList = null;
-    private Map<String, AbstractFragment> fragmentsList = null;
+    private Map<String, AbstractFragment> fragmentsMap = null;
 
     protected abstract Header addHeader();
     protected abstract void addFragments();
@@ -77,14 +80,12 @@ public abstract class FragmentManagerActivity extends FragmentActivity implement
 
             if (fragmentsList != null) {
                 for (Object s : fragmentsList) {
-                    //fragmentsStack.push((String) s);
                     fragmentsStack.push((StackedFragment) s);
                 }
             }
         }
 
-        //fragmentsList = new ArrayList<>();
-        fragmentsList = new HashMap<>();
+        fragmentsMap = new HashMap<>();
 
         addFragments();
         setHeader(addHeader());
@@ -113,6 +114,11 @@ public abstract class FragmentManagerActivity extends FragmentActivity implement
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        if (currentFragment != null) {
+            currentFragment.onActivityResult(requestCode, resultCode, data);
+        }
+
     }
 
     @Override
@@ -152,8 +158,7 @@ public abstract class FragmentManagerActivity extends FragmentActivity implement
 
     protected void addFragment(final AbstractFragment fragment, final boolean isDefaultFragment) {
         fragment.setParentActivity(this);
-        //fragmentsList.add(fragment);
-        fragmentsList.put(fragment.getClass().getName(), fragment);
+        fragmentsMap.put(fragment.getClass().getName(), fragment);
 
         if (isDefaultFragment) {
             defaultFragmentName = fragment.getClass().getName();
@@ -174,17 +179,17 @@ public abstract class FragmentManagerActivity extends FragmentActivity implement
 
         if (fragmentToShow != null) {
 
+            currentFragment = fragmentToShow;
+
             hideKeyboard();
 
             if (!isCurrentFragment) {
 
                 prms.add(FragmentParameters.PRM_FROM_FRAGMENT, getCurrentFragmentName());
 
-                //getFragmentsStack().push(fragmentName);
-                StackedFragment sf = new StackedFragment(fragmentName, prms);
+                StackedFragment sf = new StackedFragment(fragmentName, prms, fragmentToShow.getView());
                 getFragmentsStack().push(sf);
                 fragmentParameters = null;
-
 
                 final FragmentManager fragmentManager = this.getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -199,35 +204,16 @@ public abstract class FragmentManagerActivity extends FragmentActivity implement
     }
 
     private AbstractFragment findFragmentByName(final String fragmentName) {
-
-        /*
-        AbstractFragment searchedFragment = null;
-
-        for (int i = 0; i < fragmentsList.size() && searchedFragment == null; i++) {
-
-            AbstractFragment fragment = fragmentsList.get(i);
-
-            if (fragment.getClass().getName().equals(fragmentName)) {
-                searchedFragment = fragment;
-            }
-        }
-
-        return searchedFragment;
-        */
-
-        return fragmentsList.get(fragmentName);
+        return fragmentsMap.get(fragmentName);
     }
 
     private boolean isAlreadyStacked(final String fragmentName) {
 
-        //Stack<String> fStack = getFragmentsStack();
-        //return ((!fStack.isEmpty()) && fStack.peek().equals(fragmentName));
         Stack<StackedFragment> fStack = getFragmentsStack();
         return ((!fStack.isEmpty()) && fStack.peek().getFragmentName().equals(fragmentName));
     }
 
     public Object getParameterIn(final int key) {
-        //return getFragmentParameters().get(key);
 
         Stack<StackedFragment> fStack = getFragmentsStack();
         Object prmValue = null;
@@ -247,14 +233,12 @@ public abstract class FragmentManagerActivity extends FragmentActivity implement
 
     protected void goBack() {
 
-        //Stack<String> fStack = getFragmentsStack();
         Stack<StackedFragment> fStack = getFragmentsStack();
 
         if (fStack.size() > 1) {
             onGoBack = true;
             onGoTo = false;
             fStack.pop();
-            //startShowFragment(fStack.pop());
             StackedFragment sFragment = fStack.pop();
             startShowFragment(sFragment.getFragmentName(), sFragment.getParameters());
         }
@@ -273,11 +257,9 @@ public abstract class FragmentManagerActivity extends FragmentActivity implement
     private String getCurrentFragmentName() {
 
         String currentFragmentName = null;
-        //Stack<String> fStack = getFragmentsStack();
         Stack<StackedFragment> fStack = getFragmentsStack();
 
         if (!fStack.isEmpty()) {
-            //currentFragmentName = getFragmentsStack().peek();
             currentFragmentName = getFragmentsStack().peek().getFragmentName();
         }
 
@@ -313,7 +295,6 @@ public abstract class FragmentManagerActivity extends FragmentActivity implement
         return fragmentParameters;
     }
 
-    //private Stack<String> getFragmentsStack() {
     private Stack<StackedFragment> getFragmentsStack() {
 
         if (fragmentsStack == null) {

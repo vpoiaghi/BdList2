@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import bdlist.bdlist.R;
 import framework.activity.FragmentManagerActivity;
 import project.navigation.sliding_menu.SlidingMenuItem;
 
