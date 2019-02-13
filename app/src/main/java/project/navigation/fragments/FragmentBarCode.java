@@ -12,6 +12,8 @@ import com.google.zxing.integration.android.IntentResult;
 
 import bdlist.bdlist.R;
 import framework.fragments.AbstractFragment;
+import project.services.ServiceBlueAngel82Books;
+import project.services.abs.IAsyncServiceListener;
 
 /**
  * Created by VINCENT on 27/02/2016.
@@ -19,13 +21,11 @@ import framework.fragments.AbstractFragment;
  * https://www.spaceotechnologies.com/qr-code-android-using-zxing-library/
  *
  */
-public class FragmentBarCode extends AbstractFragment {
+public class FragmentBarCode extends AbstractFragment implements IAsyncServiceListener {
 
     private static String scannedCodeValue;
     private static String scannedCodeType;
     private static int scannedResult;  // 0=scan not started; 1=scan ok; 2 = scan ko;
-
-    private Button btn;
 
     public FragmentBarCode() {
         super(R.layout.frg_barcode);
@@ -40,15 +40,28 @@ public class FragmentBarCode extends AbstractFragment {
     @Override
     protected void refreshFragment() {
 
-        btn = (Button) findViewById(R.id.barcode_btn_read);
-        btn.setOnClickListener(new View.OnClickListener() {
+        final Button btnScan = (Button) findViewById(R.id.barcode_btn_scan);
+        btnScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startScan();
             }
         });
 
+        final Button btnGetInfo = (Button) findViewById(R.id.barcode_btn_getinfos);
+        btnGetInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getInfos();
+            }
+        });
+
         showScanResult();
+
+        // Le temps de tester l'api google
+        final LinearLayout llSearch = (LinearLayout) findViewById(R.id.llSearch);
+        llSearch.setVisibility(View.VISIBLE);
+
     }
 
     @Override
@@ -123,4 +136,48 @@ public class FragmentBarCode extends AbstractFragment {
         scannedResult = 0;
     }
 
+    private void getInfos() {
+        //https://code.tutsplus.com/tutorials/android-sdk-create-a-book-scanning-app-interface-book-search--mobile-17790
+
+        //String bookSearchString = "https://www.googleapis.com/books/v1/volumes?q=9782756040295&key=AIzaSyB3Z8f544fCYBe7eElVJUoh4N-RIZWAi3k";
+        //new ServiceGoogleBooks().execute(bookSearchString);
+
+        // test
+
+        if(scannedCodeValue != null){
+            //book search
+            ServiceBlueAngel82Books svcBooks = new ServiceBlueAngel82Books(this);
+            svcBooks.searchByIsbn(scannedCodeValue);
+        } else{
+            Toast toast = Toast.makeText(getParentActivity(), "Code barre non reconnu !", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
+
+    @Override
+    public void asyncServiceCallBack(int status, ServiceBlueAngel82Books.ResultEdition result) {
+
+        final TextView txtSerie = (TextView) findViewById(R.id.barcode_serie);
+        final TextView txtNumber = (TextView) findViewById(R.id.barcode_num);
+        final TextView txtTitle = (TextView) findViewById(R.id.barcode_title);
+        final TextView txtIsbn = (TextView) findViewById(R.id.barcode_isbn);
+        final TextView txtEditor = (TextView) findViewById(R.id.barcode_editor);
+
+        if (status == 200) {
+            txtSerie.setText(result.getSerie());
+            txtNumber.setText(result.getNumber());
+            txtTitle.setText(result.getTitle());
+            txtIsbn.setText(result.getIsbn());
+            txtEditor.setText(result.getEditor());
+        } else {
+            txtSerie.setText("");
+            txtNumber.setText("");
+            txtTitle.setText("");
+            txtIsbn.setText("");
+            txtEditor.setText("");
+            Toast toast = Toast.makeText(getParentActivity(), "Erreur " + status, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
+    }
 }
